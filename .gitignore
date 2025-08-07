@@ -9,3 +9,5 @@ logs/
 
 # Virtual environments
 .venv
+
+.idea/
