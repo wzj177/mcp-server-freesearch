@@ -210,7 +210,11 @@ def validate_environment_vars():
 """
 )
 async def free_general_search(
-    query: str, language="zh", safe_search=1, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=1,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "general", language, safe_search, time_range, output_format
@@ -231,7 +235,11 @@ async def free_general_search(
 """
 )
 async def free_news_search(
-    query: str, language="zh", safe_search=1, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=1,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "news", language, safe_search, time_range, output_format
@@ -252,7 +260,11 @@ async def free_news_search(
 """
 )
 async def free_image_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "images", language, safe_search, time_range, output_format
@@ -273,7 +285,11 @@ async def free_image_search(
 """
 )
 async def free_video_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "videos", language, safe_search, time_range, output_format
@@ -294,7 +310,11 @@ async def free_video_search(
 """
 )
 async def free_map_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "map", language, safe_search, time_range, output_format
@@ -315,7 +335,11 @@ async def free_map_search(
 """
 )
 async def free_music_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "music", language, safe_search, time_range, output_format
@@ -336,7 +360,11 @@ async def free_music_search(
 """
 )
 async def free_it_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "it", language, safe_search, time_range, output_format
@@ -357,7 +385,11 @@ async def free_it_search(
 """
 )
 async def free_science_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "science", language, safe_search, time_range, output_format
@@ -378,7 +410,11 @@ async def free_science_search(
 """
 )
 async def free_file_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "files", language, safe_search, time_range, output_format
@@ -399,7 +435,11 @@ async def free_file_search(
 """
 )
 async def free_social_media_search(
-    query: str, language="zh", safe_search=0, time_range="", output_format: str = "html"
+    query: str,
+    language="auto",
+    safe_search=0,
+    time_range="",
+    output_format: str = "html",
 ) -> TextContent:
     return await _perform_search(
         query, "social media", language, safe_search, time_range, output_format
@@ -410,7 +450,7 @@ async def free_social_media_search(
 async def _perform_search(
     query: str,
     category: str,
-    language="zh",
+    language="auto",
     safe_search=1,
     time_range="",
     output_format: str = "html",

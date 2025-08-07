@@ -49,7 +49,38 @@ uvx mcp-server-freesearch
 
 ## 配置
 
-设置所需的环境变量：
+### **建议** docker 搭建searx
+
+- 构建
+```shell
+docker pull docker.io/searxng/searxng:latest
+# Create directories for configuration and persistent data
+$ mkdir -p ./searxng/config/ ./searxng/data/
+$ cd ./searxng/
+
+# Run the container
+$ docker run --name searxng --replace -d \
+    -p 8888:8080 \
+    -v "./config/:/etc/searxng/" \
+    -v "./data/:/var/cache/searxng/" \
+    docker.io/searxng/searxng:latest
+```
+- 配置支持json输出
+```shell
+vim ./searxng/config/settings.yml
+```
+
+找到下面的format配置项，添加json
+```yaml
+  ...
+  # formats: [html, csv, json, rss]
+  formats:
+    - html
+    - json
+```
+---
+
+### 设置所需的环境变量：
 
 ```bash
 export SEARXNG_API_URL="https://searx.bndkt.io"  # SearXNG 实例 URL
@@ -207,24 +238,6 @@ npx @modelcontextprotocol/inspector python main.py
 3. **连接错误** - 验证 SEARXNG_API_URL 是否正确且可访问
 4. **JSON 解析错误** - 检查 SearXNG 实例是否返回有效的响应格式
 
-## 许可证
-
-本项目基于 MIT 许可证开源。
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request 来改进此项目。
-
-## 支持
-
-如果遇到问题，请检查：
-1. Python 版本是否符合要求
-2. 所有依赖是否正确安装
-3. 环境变量是否正确设置
-4. SearXNG 实例是否可访问
-
-更多技术支持，请提交 Issue 到项目仓库。
-
 ## 发布到 PyPI
 
 如果你想发布此包到 PyPI：
@@ -245,3 +258,22 @@ npx @modelcontextprotocol/inspector python main.py
    ```
 
 注意：请确保在 `pyproject.toml` 中更新版本号和仓库 URL。
+
+
+## 许可证
+
+本项目基于 MIT 许可证开源。
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request 来改进此项目。
+
+## 支持
+
+如果遇到问题，请检查：
+1. Python 版本是否符合要求
+2. 所有依赖是否正确安装
+3. 环境变量是否正确设置
+4. SearXNG 实例是否可访问
+
+更多技术支持，请提交 Issue 到项目仓库。
