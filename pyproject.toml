@@ -1,6 +1,6 @@
 [project]
 name = "mcp-server-freesearch"
-version = "0.1.0"
+version = "0.1.1"
 description = "基于 SearXNG 的免费搜索 MCP 服务器"
 readme = "README.md"
 license = "MIT"

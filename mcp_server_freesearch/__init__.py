@@ -4,8 +4,6 @@ import sys
 # mcp_server_freesearch
 from .server import mcp
 
-VERSION = "1.0.0"
-
 
 def main():
     """
