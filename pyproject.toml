@@ -1,0 +1,17 @@
+[project]
+name = "mcp-server-freesearch"
+version = "0.1.0"
+description = "使用免费的搜索引擎进行搜索"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Jiecheng Yang", email = "yangjiecheng1995@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+
+[project.scripts]
+mcp-server-freesearch = "mcp_server_freesearch:main"
