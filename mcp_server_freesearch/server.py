@@ -1619,27 +1619,3 @@ def _parse_social_media_json_result(result: dict, output_format: str) -> dict | 
             f"{hashtags_html}"
             f"</div>"
         )
-
-
-def main():
-    """
-    启动MCP服务器
-    """
-    logger.info("Starting SearXNG MCP Server...")
-
-    # 验证环境变量
-    try:
-        validate_environment_vars()
-    except EnvironmentError as e:
-        logger.error(f"Environment validation failed: {e}")
-        raise
-
-    logger.info(f"API URL: {API_URL}")
-    logger.info(f"Request timeout: {REQUEST_TIMEOUT}s")
-    logger.info("Server ready to handle requests")
-
-    return mcp
-
-
-if __name__ == "__main__":
-    main()
